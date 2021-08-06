@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import "./styles/reset.css"
+import Homepage from "./components/homepage/Homepage"
+import TestsByProfessor from './components/TestsFilters/TestsByProfessor';
+import TestsByDiscipline from "./components/TestsFilters/TestsByDiscipline";
+import ProfessorTests from './components/getTests/ProfessorTests';
+import DisciplinesTests from "./components/getTests/DisciplinesTests"
+import PostTest from './components/postTest/PostTest';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path='/' component={Homepage} exact/>
+        <Route path='/post-test' component={PostTest} exact/>
+        <Route path='/see-tests-by-professor' component={TestsByProfessor} exact/>
+        <Route path='/see-tests-by-discipline' component={TestsByDiscipline} exact/>
+        <Route path='/tests-by-professor/:professorName' component={ProfessorTests} exact />
+        <Route path='/tests-by-discipline/:disciplineId' component={DisciplinesTests} exact />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
