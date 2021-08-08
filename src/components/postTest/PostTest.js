@@ -54,7 +54,7 @@ export default function PostTest(){
         formData.append("professorId",selectedProfessor);
         formData.append("disciplineId",selectedDiscipline);
         formData.append("file",pdf);
-        
+        console.log(pdf)
         const config = {
             headers: {
                 'content-Type': 'multipart/form-data'
