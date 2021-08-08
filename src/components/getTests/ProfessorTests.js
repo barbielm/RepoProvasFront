@@ -16,11 +16,12 @@ export default function ProfessorTests(){
     useEffect(() => {
         const request = axios.get(`http://localhost:4000/tests-by-professor/${professorName}`);
         request.then(reply => {
+            console.log(reply.data)
             setTests(reply.data);
             setTestsP1(reply.data.filter(t => t.category.name === "P1"))
             setTestsP2(reply.data.filter(t => t.category.name === "P2"))
             setTestsP3(reply.data.filter(t => t.category.name === "P3"))
-            setTests2Ch(reply.data.filter(t => t.category.name === "2Ch"))
+            setTests2Ch(reply.data.filter(t => t.category.name === "2ch"))
             setTestsOutras(reply.data.filter(t => t.category.name === "Outras"))
         })
 
@@ -32,16 +33,35 @@ export default function ProfessorTests(){
     return(
         <Page>
             <Title> {tests.length > 0 ? `Provas do professor ${tests[0].professor.name}` : 'Ainda não foram adicionadas provas desse professor'} </Title>
-            {testsP1.length > 0 ? <Section>P1</Section> : '' }
-            <Tests tests={testsP1} />
-            {testsP2.length > 0 ? <Section>P2</Section> : '' }
-            <Tests tests={testsP2} />
-            {testsP3.length > 0 ? <Section>P3</Section> : '' }
+            {testsP1.length > 0 ? <>
+                                  <Section>P1</Section> 
+                                  <Tests tests={testsP1} />
+                                  </>
+                                  : '' }
+            {testsP2.length > 0 ?   <>
+                                    <Section>P2</Section>
+                                    <Tests tests={testsP2} />
+                                    </>
+                                    : ''}
+            {testsP3.length > 0 ? 
+            <>
+            <Section>P3</Section> 
             <Tests tests={testsP3} />
-            {tests2Ch.length > 0 ? <Section>2Ch</Section> : '' }
+            </>
+            : ''}
+
+            {tests2Ch.length > 0 ? 
+            <>
+            <Section>2Ch</Section> 
             <Tests tests={tests2Ch} />
-            {testsOutras.length > 0 ? <Section>Outras</Section> : '' }
+            </>
+            : ''}
+            {testsOutras.length > 0 ? 
+            <>
+            <Section>Outras</Section> 
             <Tests tests={testsOutras} />
+            </>
+            : ''}
         </Page>
     )
 }

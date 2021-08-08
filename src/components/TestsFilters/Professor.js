@@ -6,7 +6,7 @@ export default function Professor({professor}){
     return(
         <Component>
             <Name onClick={() => history.push(`/tests-by-professor/${professor.name}`)} >Professor: {professor.name}</Name>
-            <NumberOfTests>Number of tests: {professor.numberOfTests}</NumberOfTests>
+            <NumberOfTests>{professor.numberOfTests}</NumberOfTests>
         </Component>
     )
 }
@@ -15,7 +15,10 @@ const Component = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-between;
-    border-bottom: 1px solid #ffffff;
+    &:not(:last-child){
+        border-bottom: 1px solid #000;
+    }
+    
     font-size: 20px;
     margin: 15px 0;
     padding: 10px;
@@ -23,8 +26,11 @@ const Component = styled.div`
 
 const Name = styled.div`
     cursor: pointer;
+    color: #000;
 
 `
 const NumberOfTests = styled.div`
     color: blue;
+    font-size: 25px;
+    font-weight: bold;
 `
