@@ -14,7 +14,7 @@ export default function ProfessorTests(){
     const [testsOutras, setTestsOutras] = useState([]);
 
     useEffect(() => {
-        const request = axios.get(`http://localhost:4000/tests-by-professor/${professorName}`);
+        const request = axios.get(`https://back-repo-provas-barbielm.herokuapp.com/tests-by-professor/${professorName}`);
         request.then(reply => {
             console.log(reply.data)
             setTests(reply.data);

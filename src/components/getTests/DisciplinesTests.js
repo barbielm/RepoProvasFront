@@ -14,7 +14,7 @@ export default function DisciplinesTests(){
     const [testsOutras, setTestsOutras] = useState([]);
 
     useEffect(() => {
-        const request = axios.get(`http://localhost:4000/tests-by-discipline/${disciplineId}`);
+        const request = axios.get(`https://back-repo-provas-barbielm.herokuapp.com/tests-by-discipline/${disciplineId}`);
         request.then(reply => {
 
             setTests(reply.data);

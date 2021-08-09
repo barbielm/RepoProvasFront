@@ -15,7 +15,7 @@ export default function PostTest(){
     const history = useHistory();
 
     useEffect(() => {
-        const request = axios.get("http://localhost:4000/informations");
+        const request = axios.get("https://back-repo-provas-barbielm.herokuapp.com/informations");
         request.then(reply => {
             setDisciplines(reply.data.disciplines);
             setAllProfessors(reply.data.professors);
