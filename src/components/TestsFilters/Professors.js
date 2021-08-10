@@ -3,7 +3,7 @@ import styled from "styled-components"
 export default function Professors({professors}){
     return(
         <Element>
-            {professors.map(p => <Professor professor={p} />)}
+            {professors.map((p,i) => <Professor key={i} professor={p} />)}
         </Element>
     )
 }

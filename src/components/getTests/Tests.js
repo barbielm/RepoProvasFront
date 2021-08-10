@@ -3,7 +3,7 @@ import styled from "styled-components"
 export default function({tests}){
     return(
         <Element>
-            {tests.map(t => <Test test={t} />)}
+            {tests.map((t,i) => <Test key={i} test={t} />)}
         </Element>
     )
 }

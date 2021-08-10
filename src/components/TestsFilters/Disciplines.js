@@ -3,7 +3,7 @@ import styled from "styled-components"
 export default function Disciplines({disciplines}){
     return(
         <Element>
-            {disciplines.map(d => <Discipline discipline={d} />)}
+            {disciplines.map((d,i) => <Discipline key={i} discipline={d} />)}
         </Element>
     )
 }
