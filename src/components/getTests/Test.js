@@ -10,7 +10,7 @@ export default function Test({test}){
             <Discipline>Discipline: {test.discipline.name}</Discipline>
             <Professor>Professor: {test.professor.name}</Professor>
             <Type>Type: {test.category.name}</Type>
-            <Link href={`http://localhost:4000/files/${test.pdf}`} target="_blank" >{test.pdf} </Link>
+            <Link href={`https://repo-provass.herokuapp.com/${test.pdf}`} target="_blank" >{test.pdf} </Link>
         </Component>
     )
 }

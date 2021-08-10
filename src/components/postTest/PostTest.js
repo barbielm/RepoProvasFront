@@ -15,7 +15,7 @@ export default function PostTest(){
     const history = useHistory();
 
     useEffect(() => {
-        const request = axios.get("https://back-repo-provas-barbielm.herokuapp.com/informations");
+        const request = axios.get("https://repo-provass.herokuapp.com/informations");
         request.then(reply => {
             setDisciplines(reply.data.disciplines);
             setAllProfessors(reply.data.professors);
@@ -61,7 +61,7 @@ export default function PostTest(){
             }
         }
         
-        const request = axios.post("http://localhost:4000/newtest", formData, config);
+        const request = axios.post("https://repo-provass.herokuapp.com/newtest", formData, config);
 
         request.then(() => {
             alert("Prova enviada com sucesso!")

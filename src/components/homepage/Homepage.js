@@ -11,7 +11,7 @@ export default function Homepage(){
     const [elements, setElements] = useState([]);
 
     useEffect(() => {
-        const url = (option === "Professores") ? "https://back-repo-provas-barbielm.herokuapp.com/tests-professor" : "https://back-repo-provas-barbielm.herokuapp.com/tests-discipline"
+        const url = (option === "Professores") ? "https://repo-provass.herokuapp.com/tests-professor" : "https://repo-provass.herokuapp.com/tests-discipline"
         if(option === "Escolha uma opção" || option === "" ) return;
         const request = axios.get(url);
         request.then(reply => {
