@@ -10,7 +10,7 @@ export default function PostTest(){
     const [allProfessors, setAllProfessors] = useState('');
     const [pdf, setPdf] = useState(null);
     const [name, setName] = useState('');
-    const [types, setTypes] = useState(["P1","P2","P3","2ch","Outras"]);
+    const types = ["P1","P2","P3","2ch","Outras"];
     const [type, setType] = useState("");
     const history = useHistory();
 

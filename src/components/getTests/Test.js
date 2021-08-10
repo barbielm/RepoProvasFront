@@ -1,9 +1,8 @@
-import { useHistory } from "react-router"
 import styled from "styled-components"
 
 
 export default function Test({test}){
-    const history = useHistory();
+    
     return(
         <Component>
             <Name >{test.name}</Name>

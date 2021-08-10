@@ -28,7 +28,7 @@ export default function DisciplinesTests(){
         request.catch(() => {
             alert("Error! try refreshing the page.")
         })
-    },[])
+    })
     
     return(
         <Page>

@@ -1,6 +1,6 @@
 import Test from "./Test";
 import styled from "styled-components"
-export default function({tests}){
+export default function Tests({tests}){
     return(
         <Element>
             {tests.map((t,i) => <Test key={i} test={t} />)}
