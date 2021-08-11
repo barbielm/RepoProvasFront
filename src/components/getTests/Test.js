@@ -9,7 +9,7 @@ export default function Test({test}){
             <Discipline>Discipline: {test.discipline.name}</Discipline>
             <Professor>Professor: {test.professor.name}</Professor>
             <Type>Type: {test.category.name}</Type>
-            <Link href={`https://repo-provass.herokuapp.com/${test.pdf}`} target="_blank" >{test.pdf} </Link>
+            <Link href={`http://localhost:4000/files/${test.pdf}`} target="_blank" >{test.pdf} </Link>
         </Component>
     )
 }
@@ -22,10 +22,17 @@ const Component = styled.div`
     font-size: 20px;
     margin: 15px 0;
     padding: 10px;
+    @media(max-width: 600px){
+        font-size: 11px;
+        padding: 5px;
+    }
 `
 
 const Name = styled.div`
     color: #000;
+    @media(max-width: 600px){
+        margin-right: 5px;
+    }
 
 `
 const Discipline = styled.div`
@@ -45,4 +52,7 @@ const Link = styled.a`
     font-size: 22px;
     cursor: pointer;
     text-decoration: underline;
+    @media(max-width: 600px){
+        font-size: 11px;
+    }
 `

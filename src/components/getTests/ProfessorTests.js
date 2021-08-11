@@ -28,7 +28,7 @@ export default function ProfessorTests(){
         request.catch(() => {
             alert("Error! try refreshing the page.")
         })
-    })
+    },[professorName])
 
     return(
         <Page>

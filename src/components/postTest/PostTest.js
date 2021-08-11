@@ -61,7 +61,7 @@ export default function PostTest(){
             }
         }
         
-        const request = axios.post("https://repo-provass.herokuapp.com/newtest", formData, config);
+        const request = axios.post("http://localhost:4000/newtest", formData, config);
 
         request.then(() => {
             alert("Prova enviada com sucesso!")
@@ -77,7 +77,7 @@ export default function PostTest(){
             <Title>Selecione uma disciplina: </Title>
             <select id="discipline" name="discipline" value={discipline} onChange={e => {setDiscipline(e.target.value); setProfessors(allProfessors.filter(p => p.discipline.name === e.target.value))} } >
                 <option>Escolha uma opção</option>
-                {disciplines.map(d => <option >{d.name}</option>)}
+                {disciplines.map((d,i) => <option key={i} >{d.name}</option>)}
             </select>
         
             
@@ -88,7 +88,7 @@ export default function PostTest(){
             <Title>Selecione um professor: </Title> 
             <select id="professor" name="professor" value={professor} onChange={e => setProfessor(e.target.value)} >
                 <option>Escolha uma opção</option>
-                {professors.map(p => <option >{p.name}</option>)}
+                {professors.map((p,i) => <option key={i} >{p.name}</option>)}
             </select>
             
             
@@ -103,7 +103,7 @@ export default function PostTest(){
             <Title>Tipo: </Title> 
             <select id="type" name="type" value={type} onChange={e => {if(e.target.value !== "Escolha uma opção") setType(e.target.value)}} >
                 <option>Escolha uma opção</option>
-                {types.map(t => <option >{t}</option>)}
+                {types.map((t,i) => <option key={i} >{t}</option>)}
             </select>
             
             <button id="send" >Enviar</button>
@@ -178,7 +178,7 @@ const Page = styled.form`
     select{
         width: 200px;
         height: 40px;
-        border-radius: 25px;
+       
         padding: 0 10px;
         background: #000;
         border: none;
@@ -196,6 +196,12 @@ const Page = styled.form`
             100%{
                 transform: translateX(0);
             }
+        }
+    }
+    @media(max-width: 600px){
+        width: 100%;
+        input{
+            width: 90%;
         }
     }
     

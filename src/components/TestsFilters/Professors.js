@@ -27,5 +27,9 @@ const Element = styled.div`
         transform: scaleY(1)
     }
     }
+    @media(max-width: 600px){
+    width: 100%;
+    border-radius: 0;
+}
 
 `

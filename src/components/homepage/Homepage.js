@@ -58,10 +58,12 @@ const Home = styled.div`
         color: #FFF;
         font-family: 'Courier New', Courier, monospace;
     }
+
 `
 const Title = styled.div`
     font-size: 25px;
     margin: 20px 0;
+    text-align: center;
 `
 const Subtitle = styled.div`
     font-size: 20px;
@@ -76,5 +78,6 @@ const PostTestLink = styled.div`
     color: blue;
     text-decoration: underline;
     margin-top: 10px;
+    text-align: center;
 `
 

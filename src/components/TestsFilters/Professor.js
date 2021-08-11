@@ -22,6 +22,9 @@ const Component = styled.div`
     font-size: 20px;
     margin: 15px 0;
     padding: 10px;
+    @media(max-width: 600px){
+        font-size: 15px;
+    }
 `
 
 const Name = styled.div`

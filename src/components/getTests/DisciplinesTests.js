@@ -14,7 +14,7 @@ export default function DisciplinesTests(){
     const [testsOutras, setTestsOutras] = useState([]);
 
     useEffect(() => {
-        const request = axios.get(`https://repo-provass.herokuapp.com/tests-by-discipline/${disciplineId}`);
+        const request = axios.get(`http://localhost:4000/tests-by-discipline/${disciplineId}`);
         request.then(reply => {
 
             setTests(reply.data);
@@ -28,7 +28,7 @@ export default function DisciplinesTests(){
         request.catch(() => {
             alert("Error! try refreshing the page.")
         })
-    })
+    },[disciplineId])
     
     return(
         <Page>
